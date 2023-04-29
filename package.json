@@ -1,0 +1,27 @@
+{
+  "name": "eslint-config-dc",
+  "version": "1.0.0",
+  "description": "reusable linting config for eslint",
+  "main": "main.js",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielc92/eslint-config-dc.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint config"
+  ],
+  "author": "Daniel Corcoran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielc92/eslint-config-dc/issues"
+  },
+  "homepage": "https://github.com/danielc92/eslint-config-dc#readme",
+  "peerDependencies": {
+    "eslint": ">= 8",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-no-secrets": "^0.8.9",
+    "eslint-plugin-sonarjs": "^0.19.0"
+  }
+}
