@@ -108,7 +108,7 @@ module.exports = {
 
       // ESLINT LAYOUT & FORMATTING (https://eslint.org/docs/latest/rules/#layout--formatting)
       'multiline-ternary': [ 'warn', 'always' ],
-      'indent': [ 'warn', 3 ],
+      'indent': [ 'warn', 3, { 'SwitchCase': 1 } ],
       'key-spacing': [ 'warn', { beforeColon: false, afterColon: true } ],
       'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
       'semi': [ 'warn', 'always' ],
@@ -121,10 +121,53 @@ module.exports = {
       'array-bracket-spacing': [ 'warn', 'always' ],
       'arrow-spacing': [ 'warn', { 'before': true, 'after': true } ],
       'object-curly-spacing': [ 'warn', 'always' ],
-      'padded-blocks': [ 'warn', 'always' ],
+      'padded-blocks': [ 'warn', 'never' ],
       'arrow-parens': 'warn',
       'comma-spacing': [ 'warn', { before: false, after: true } ],
-      'space-infix-ops': 'warn'
+      'space-infix-ops': 'warn',
+      'keyword-spacing': [ 'warn', { before: true, after: true } ],
+      'newline-after-var': 'warn',
+      'max-statements-per-line': [ 'warn', { 'max': 1 } ],
+      'padding-line-between-statements': [ 'warn',
+
+         // always add new line BEFORE these
+         { blankLine: 'always', prev: '*' 
+            , next: [
+               'block',
+               'block-like',
+               'if',
+               'for',
+               'switch',
+               'export',
+               'return',
+               'expression',
+               'class',
+               'throw',
+               'const', 
+               'let',
+               'var'
+           
+            ] },
+         // always add new line AFTER these
+         { blankLine: 'always', next: '*' 
+            , prev: [
+               'block',
+               'block-like',
+               'if',
+               'for',
+               'switch',
+               'expression',
+               'class'
+           
+            ] },
+         // never add new lines BEFORE these
+         { blankLine: 'never', prev: '*', next: [
+            'break',
+            'case',
+            'import',
+            'default'
+         ] }
+      ]
 
    }
 };
