@@ -1,71 +1,130 @@
-const base = require('./base')
+/* eslint-disable sort-keys */
+const base = require('./src/configs/base');
+
 module.exports = {
    
-    ...base,
-    'extends': [
-        'eslint:recommended',
-        'plugin:pii/recommended',
-    ],
-    'overrides': [
-    // ONLY TEST FILES
-    {
-        'files': ['**/__tests__/**/*.[t|j]s'],
-        'plugins': ['jest'],
-        'extends': ['plugin:jest/recommended'],
-        'rules': {  
-        'jest/prefer-expect-assertions': 'error',
-        'jest/prefer-to-have-length': 'error',
-        'jest/max-expects': ['error', {max: 2}],
-        'jest/prefer-lowercase-title': 'error',
-        'jest/no-deprecated-functions': 'error',
-        'jest/prefer-hooks-in-order': 'error',
-        'jest/prefer-hooks-on-top': 'error',
-        'jest/prefer-equality-matcher': 'error',
-        'jest/no-conditional-in-test': 'error'
-        }
-    }
-    ],
-    'plugins': [
-        'no-secrets',
-        'sonarjs',
-        'pii'
-    ],
-    'rules': {
-        // SECURITY: SECRETS (ZERO TOLERANCE)
-        'no-secrets/no-secrets': 'error',
+   ... base,
+   'extends': [
+      'eslint:recommended',
+      'plugin:@typescript-eslint/recommended'
+   ],
+   'plugins': [
+      '@typescript-eslint',
+      'no-secrets',
+      'sonarjs'
+   ],
+   'parser': '@typescript-eslint/parser',
+   'parserOptions': {
+      'ecmaVersion': 'latest',
+      'project': './tsconfig.json',
+      'sourceType': 'module'
+   },
+   'overrides': [
+      // ONLY TEST FILES
+      {
+         'files': [ '**/__tests__/**/*.[t|j]s' ],
+         'plugins': [ 'jest' ],
+         'extends': [ 'plugin:jest/recommended' ],
+         'rules': {  
+            'jest/prefer-expect-assertions': 'error',
+            'jest/prefer-to-have-length': 'error',
+            'jest/max-expects': [ 'error', { max: 2 } ],
+            'jest/prefer-lowercase-title': 'error',
+            'jest/no-deprecated-functions': 'error',
+            'jest/prefer-hooks-in-order': 'error',
+            'jest/prefer-hooks-on-top': 'error',
+            'jest/prefer-equality-matcher': 'error',
+            'jest/no-conditional-in-test': 'error'
+         }
+      }
+   ],
+   // NOTE RULES BELOW ARE IN *ADDITION* TO RECOMMENDED CONFIGS
+   'rules': {
+
+      // SECURITY: SECRETS (ZERO TOLERANCE)
+      'no-secrets/no-secrets': 'error',
         
-        // CODE QUALITY: SONARJS (ZERO TOLERANCE)
-        'sonarjs/cognitive-complexity': 'error',
-        'sonarjs/elseif-without-else': 'error',
-        'sonarjs/max-switch-cases': 'error',
-        'sonarjs/no-all-duplicated-branches': 'error',
-        'sonarjs/no-collapsible-if': 'error',
-        'sonarjs/no-collection-size-mischeck': 'error',
-        'sonarjs/no-duplicate-string': 'error',
-        'sonarjs/no-duplicated-branches': 'error',
-        'sonarjs/no-element-overwrite': 'error',
-        'sonarjs/no-empty-collection': 'error',
-        'sonarjs/no-extra-arguments': 'error',
-        'sonarjs/no-gratuitous-expressions': 'error',
-        'sonarjs/no-identical-conditions': 'error',
-        'sonarjs/no-identical-expressions': 'error',
-        'sonarjs/no-identical-functions': 'error',
-        'sonarjs/no-ignored-return': 'error',
-        'sonarjs/no-inverted-boolean-check': 'error',
-        'sonarjs/no-nested-switch': 'error',
-        'sonarjs/no-nested-template-literals': 'error',
-        'sonarjs/no-one-iteration-loop': 'error',
-        'sonarjs/no-redundant-boolean': 'error',
-        'sonarjs/no-redundant-jump': 'error',
-        'sonarjs/no-same-line-conditional': 'error',
-        'sonarjs/no-small-switch': 'error',
-        'sonarjs/no-unused-collection': 'error',
-        'sonarjs/no-use-of-empty-return-value': 'error',
-        'sonarjs/no-useless-catch': 'error',
-        'sonarjs/non-existent-operator': 'error',
-        'sonarjs/prefer-immediate-return': 'error',
-        'sonarjs/prefer-object-literal': 'error',
-        'sonarjs/prefer-single-boolean-return': 'error',
-        'sonarjs/prefer-while': 'error'
-    }
-}
+      // CODE QUALITY: SONARJS (ZERO TOLERANCE)
+      'sonarjs/cognitive-complexity': 'error',
+      'sonarjs/elseif-without-else': 'error',
+      'sonarjs/max-switch-cases': 'error',
+      'sonarjs/no-all-duplicated-branches': 'error',
+      'sonarjs/no-collapsible-if': 'error',
+      'sonarjs/no-collection-size-mischeck': 'error',
+      'sonarjs/no-duplicate-string': 'error',
+      'sonarjs/no-duplicated-branches': 'error',
+      'sonarjs/no-element-overwrite': 'error',
+      'sonarjs/no-empty-collection': 'error',
+      'sonarjs/no-extra-arguments': 'error',
+      'sonarjs/no-gratuitous-expressions': 'error',
+      'sonarjs/no-identical-conditions': 'error',
+      'sonarjs/no-identical-expressions': 'error',
+      'sonarjs/no-identical-functions': 'error',
+      'sonarjs/no-ignored-return': 'error',
+      'sonarjs/no-inverted-boolean-check': 'error',
+      'sonarjs/no-nested-switch': 'error',
+      'sonarjs/no-nested-template-literals': 'error',
+      'sonarjs/no-one-iteration-loop': 'error',
+      'sonarjs/no-redundant-boolean': 'error',
+      'sonarjs/no-redundant-jump': 'error',
+      'sonarjs/no-same-line-conditional': 'error',
+      'sonarjs/no-small-switch': 'error',
+      'sonarjs/no-unused-collection': 'error',
+      'sonarjs/no-use-of-empty-return-value': 'error',
+      'sonarjs/no-useless-catch': 'error',
+      'sonarjs/non-existent-operator': 'error',
+      'sonarjs/prefer-immediate-return': 'error',
+      'sonarjs/prefer-object-literal': 'error',
+      'sonarjs/prefer-single-boolean-return': 'error',
+      'sonarjs/prefer-while': 'error',
+
+      // TYPESCRIPT RULES (https://typescript-eslint.io/rules/)
+      '@typescript-eslint/no-floating-promises': 'warn',
+
+      // ESLINT SUGGESTIONS (https://eslint.org/docs/latest/rules/#suggestions)
+      'curly': 'warn',
+      'default-case': 'warn',
+      'default-case-last': 'warn',
+      'no-else-return': 'warn',
+      'no-console': 'warn',
+      'no-inline-comments': 'warn',
+      'no-lonely-if': 'warn',
+      'eqeqeq': 'warn',
+      'no-new-wrappers': 'warn',
+      'no-plusplus': 'warn',
+      'no-return-await': 'warn',
+      'no-throw-literal': 'warn',
+      'no-nested-ternary': 'warn',
+      'no-useless-constructor': 'warn',
+      'no-useless-rename': 'warn',
+      'prefer-spread': 'warn',
+      'require-await': 'warn',
+      'sort-keys': 'warn',
+      'yoda': 'warn',
+    
+      // ESLINT POSSIBLE PROBLEMS (https://eslint.org/docs/latest/rules/#possible-problems)
+      'no-self-compare': 'warn',
+      'no-unreachable-loop': 'warn',
+
+      // ESLINT LAYOUT & FORMATTING (https://eslint.org/docs/latest/rules/#layout--formatting)
+      'multiline-ternary': [ 'warn', 'always' ],
+      'indent': [ 'warn', 3 ],
+      'key-spacing': [ 'warn', { beforeColon: false, afterColon: true } ],
+      'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
+      'semi': [ 'warn', 'always' ],
+      'no-multi-spaces': 'warn',
+      'rest-spread-spacing': [ 'warn', 'always' ],
+      'space-unary-ops': 'warn',
+      'space-before-function-paren': [ 'warn', 'always' ],
+      'space-before-blocks': [ 'warn', 'always' ],
+      'quotes': [ 'warn', 'single' ],
+      'array-bracket-spacing': [ 'warn', 'always' ],
+      'arrow-spacing': [ 'warn', { 'before': true, 'after': true } ],
+      'object-curly-spacing': [ 'warn', 'always' ],
+      'padded-blocks': [ 'warn', 'always' ],
+      'arrow-parens': 'warn',
+      'comma-spacing': [ 'warn', { before: false, after: true } ],
+      'space-infix-ops': 'warn'
+
+   }
+};
