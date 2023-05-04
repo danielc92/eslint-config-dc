@@ -1,0 +1,1 @@
+examples for jest tests to use

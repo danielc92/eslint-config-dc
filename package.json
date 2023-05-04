@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/danielc92/eslint-config-dc.git"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "keywords": [
     "eslint",
     "eslint config"
@@ -18,10 +21,26 @@
   },
   "homepage": "https://github.com/danielc92/eslint-config-dc#readme",
   "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
     "eslint": ">= 8",
     "eslint-plugin-jest": "^27.2.1",
     "eslint-plugin-no-secrets": "^0.8.9",
-    "eslint-plugin-pii": "^1.0.2",
     "eslint-plugin-sonarjs": "^0.19.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
+    "@types/eslint": "^8.37.0",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": ">= 8",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-no-secrets": "^0.8.9",
+    "eslint-plugin-sonarjs": "^0.19.0",
+    "jest": "^29.5.0",
+    "typescript": "^5.0.4"
   }
 }
