@@ -22,7 +22,7 @@ module.exports = {
    'overrides': [
       // ONLY TEST FILES
       {
-         'files': [ '**/__tests__/**/*.[t|j]s' ],
+         'files': [ '**/*[spec|test].[t|j]s' ],
          'plugins': [ 'jest' ],
          'extends': [ 'plugin:jest/recommended' ],
          'rules': {  
