@@ -2,18 +2,33 @@ import { hi } from './i';
 import { hid } from './i';
 
 class Dasdas {
+   singlelineA: string;
+   singlelineS: string;
+   singlelineD: string;
+
    constructor () {
-      
+      this.singlelineA = 'DFFAdf';
+      this.singlelineD = 'DFFAdf';
+      this.singlelineS = 'DFFAdf';
+   }
+
+   methoda () {
+      console.log('a');
+   }
+
+   methodf () {
+      console.log('a');
+   }
+
+   methodaa () {
+      console.log('a');
    }
 }
 
 const foo = () => {
    const fofo = 'bar';
-   
    const ff = '44';
-
    const ff53 = 'f';
-
    const fobar = 'fobar';
 
    if (fobar === fobar) {
@@ -46,7 +61,9 @@ const foo = () => {
          console.log('kh');
    }
 
-   const arr = [ 1, 2, 3, 45, 6 ];
+   const arr = [
+      1, 2, 3, 45, 6 
+   ];
 
    const badawat = async () => {
       const r = 'lol';
@@ -55,11 +72,12 @@ const foo = () => {
    };
 
    const res = badawat();
-   
-   const obj1 = { 'daniel': 'email@outloo' };
+
+   const obj1 = {
+      'daniel': 'email@outloo' 
+   };
 
    const dddd = obj1;
-
    const N = 'Daniel';
  
    console.log(N);
@@ -70,19 +88,14 @@ const foo = () => {
       
       'apple': 'banan',
       
-      'orange': 'orange',
+      'orange': 'orange'
    };
 
    const fo = fobar;
-
    const bademail = 'danieloutlook.com';
-
    const rw = 'faf';
-
    const r = rw;
-
    const badphone = '04123333';
-
    const rr = typeof 333;
 
    const tern = fobar.length > 33
@@ -93,7 +106,17 @@ const foo = () => {
       return 4;
    };
 
-   const array = [ 1, 2, 3, 4, 445, 555 ];
+   const array = [
+      1, 2, 3, 4, 445, 555 
+   ];
+
+   const oiii = [
+      1, 2, 3, 4, 445, 555 
+   ];
+
+   const yuuu = [
+      1, 2, 3, 4, 445, 555 
+   ];
 
    try {
       const r = 34234;
@@ -105,7 +128,7 @@ const foo = () => {
       array.push(1234);
    }
 
-   for ( let index = 0; index < array.length; index++) {
+   for (let index = 0; index < array.length; index++) {
       const element = array[index];
       
       return element + 44;
@@ -118,6 +141,72 @@ const foo = () => {
    }
 };
 
+const arr1 = [
+   1, 2, 2, 3, 3, 3
+];
+
+const nnn = {
+   ar: [
+      1, 1, 1, 1, 3
+   ],
+   odd: {
+      fff: {
+         dasd: 'asdasd',
+         asdasd: [
+            4, 4, 4, 4, 4
+         ]
+      },
+      zzz: [
+         {
+            adsAS: 'asd',
+            fasfASF: 'asfafs' 
+         }, {
+            adsAS: 'asd',
+            fasfASF: 'asfafs' 
+         }, {
+            adsAS: 'asd',
+            fasfASF: 'asfafs' 
+         } 
+      ]
+   }
+};
+
+class SampleNode {
+   data: number;
+
+   left: null | SampleNode;
+
+   right: null | SampleNode;
+
+   constructor (data: number) {
+      this.data = data;
+      this.left = null;
+      this.right = null;
+   }
+}
+
+const somenod = (new SampleNode(4));
+
+const sarr = [
+   [
+      1, 2, 2, 2, 2
+   ], [
+      1, 2, 2, 2, 2
+   ], [
+      1, 2, 2, 2, 2, 5, 5, 5, 5
+   ]
+];
+
+while (sarr.length > 0) {
+   console.log(sarr);
+}
+
+const arr31 = [
+   1, 2, 2, 1, 1, 1, 1, 3, 3, 3
+];
+
+const [ first, second ] = arr1;
+const arr2 = [ 3, 3 ];
 const nosemi = 'nosemi';
  
 console.log(nosemi);
