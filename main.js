@@ -20,15 +20,23 @@ module.exports = {
       'sourceType': 'module'
    },
    'overrides': [
-      // ONLY TEST FILES
+      // JEST/TESTING (ZERO TOLERANCE)
+      // These rules only apply to .spec.js, .spec.ts, .test.js, .test.ts files
       {
          'files': [ '**/*[spec|test].[t|j]s' ],
          'plugins': [ 'jest' ],
          'extends': [ 'plugin:jest/recommended' ],
-         'rules': {  
-            'jest/prefer-expect-assertions': 'error',
+         'rules': {
+              
+            'jest/prefer-expect-assertions': [ 'error', 
+               { 'onlyFunctionsWithAsyncKeyword': true,
+                  'onlyFunctionsWithExpectInLoop': true,
+                  'onlyFunctionsWithExpectInCallback': true }
+            ],
+            'jest/prefer-each': 'error',
             'jest/prefer-to-have-length': 'error',
             'jest/max-expects': [ 'error', { max: 2 } ],
+            'jest/prefer-expect-resolves': 'error',
             'jest/prefer-lowercase-title': 'error',
             'jest/no-deprecated-functions': 'error',
             'jest/prefer-hooks-in-order': 'error',
