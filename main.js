@@ -135,6 +135,16 @@ module.exports = {
       'space-infix-ops': 'warn',
       'keyword-spacing': [ 'warn', { before: true, after: true } ],
       'newline-after-var': 'warn',
+      'comma-dangle': ['warn', 'never'],
+      'comma-style': ['warn', 'last'],
+      "object-property-newline": ["warn",{ "allowAllPropertiesOnSameLine": false }],
+      "object-curly-newline": ["warn", {
+         "ObjectExpression": "always",
+         "ObjectPattern": { "multiline": true },
+         "ImportDeclaration": { "multiline": true, "minProperties": 4 },
+         "ExportDeclaration": { "multiline": true, "minProperties": 4 },
+     }],
+      'brace-style': ['warn', '1tbs', {allowSingleLine: false}],
       'max-statements-per-line': [ 'warn', { 'max': 1 } ],
       'padding-line-between-statements': [ 'warn',
 
