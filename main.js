@@ -3,7 +3,7 @@ const base = require('./src/configs/base');
 
 module.exports = {
    
-   ... base,
+   ...base,
    'extends': [ 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:promise/recommended' ],
    'plugins': [ '@typescript-eslint', 'no-secrets', 'sonarjs', 'promise' ],
    'parser': '@typescript-eslint/parser',
