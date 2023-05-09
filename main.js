@@ -222,7 +222,7 @@ module.exports = {
             blankLine: 'always',
             prev: '*', 
             next: [
-               'block', 'block-like', 'if', 'for', 'switch', 'export', 'return', 'class', 'throw', 'multiline-const', 'multiline-let'
+               'block', 'block-like', 'if', 'for', 'switch', 'export', 'return', 'class', 'throw', 'multiline-const', 'multiline-expression', 'multiline-let'
             ] 
          }, {
             // always add new line AFTER these
