@@ -139,13 +139,13 @@ module.exports = {
       'array-bracket-newline': [
          'warn', {
             'multiline': true,
-            'minItems': 5 
+            'minItems': 4
          } 
       ],
       'array-element-newline': [
          'warn', {
-            'ArrayExpression': 'never',
-            'ArrayPattern': 'never' 
+            'multiline': true,
+            'minItems': 4
          } 
       ],
       'new-parens': 'warn',
