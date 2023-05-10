@@ -1,5 +1,10 @@
 import { hi } from './i';
 import { hid } from './i';
+import { Observable, from } from 'rxjs';
+
+const badObs = Observable.create('bad');
+
+console.log(badObs);
 
 class Dasdas {
    singlelineA: string;
@@ -62,7 +67,11 @@ const foo = () => {
    }
 
    const arr = [
-      1, 2, 3, 45, 6 
+      1,
+      2,
+      3,
+      45,
+      6 
    ];
 
    const badawat = async () => {
@@ -107,15 +116,30 @@ const foo = () => {
    };
 
    const array = [
-      1, 2, 3, 4, 445, 555 
+      1,
+      2,
+      3,
+      4,
+      445,
+      555 
    ];
 
    const oiii = [
-      1, 2, 3, 4, 445, 555 
+      1,
+      2,
+      3,
+      4,
+      445,
+      555 
    ];
 
    const yuuu = [
-      1, 2, 3, 4, 445, 555 
+      1,
+      2,
+      3,
+      4,
+      445,
+      555 
    ];
 
    try {
@@ -141,29 +165,54 @@ const foo = () => {
    }
 };
 
+let rr5;
+
+if (true) {
+   rr5 = '3';
+}
+
+if (true) {
+   rr5 = '5';
+}
+
 const arr1 = [
-   1, 2, 2, 3, 3, 3
+   1,
+   2,
+   2,
+   3,
+   3,
+   3
 ];
 
 const nnn = {
    ar: [
-      1, 1, 1, 1, 3
+      1,
+      1,
+      1,
+      1,
+      3
    ],
    odd: {
       fff: {
          dasd: 'asdasd',
          asdasd: [
-            4, 4, 4, 4, 4
+            4,
+            4,
+            4,
+            4,
+            4
          ]
       },
       zzz: [
          {
             adsAS: 'asd',
             fasfASF: 'asfafs' 
-         }, {
+         },
+         {
             adsAS: 'asd',
             fasfASF: 'asfafs' 
-         }, {
+         },
+         {
             adsAS: 'asd',
             fasfASF: 'asfafs' 
          } 
@@ -189,11 +238,29 @@ const somenod = (new SampleNode(4));
 
 const sarr = [
    [
-      1, 2, 2, 2, 2
-   ], [
-      1, 2, 2, 2, 2
-   ], [
-      1, 2, 2, 2, 2, 5, 5, 5, 5
+      1,
+      2,
+      2,
+      2,
+      2
+   ],
+   [
+      1,
+      2,
+      2,
+      2,
+      2
+   ],
+   [
+      1,
+      2,
+      2,
+      2,
+      2,
+      5,
+      5,
+      5,
+      5
    ]
 ];
 
@@ -202,7 +269,16 @@ while (sarr.length > 0) {
 }
 
 const arr31 = [
-   1, 2, 2, 1, 1, 1, 1, 3, 3, 3
+   1,
+   2,
+   2,
+   1,
+   1,
+   1,
+   1,
+   3,
+   3,
+   3
 ];
 
 const [ first, second ] = arr1;
