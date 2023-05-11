@@ -1,11 +1,15 @@
-/* eslint-disable sort-keys */
 const base = require('./src/configs/base');
 
 module.exports = {
    
-   ...base,
+   ... base,
    'extends': [ 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:promise/recommended' ],
-   'plugins': [ '@typescript-eslint', 'no-secrets', 'sonarjs', 'promise' ],
+   'plugins': [
+      '@typescript-eslint',
+      'no-secrets',
+      'sonarjs',
+      'promise' 
+   ],
    'parser': '@typescript-eslint/parser',
    'parserOptions': {
       'ecmaVersion': 'latest',
@@ -22,7 +26,8 @@ module.exports = {
          'rules': {
               
             'jest/prefer-expect-assertions': [
-               'error', {
+               'error',
+               {
                   'onlyFunctionsWithAsyncKeyword': true,
                   'onlyFunctionsWithExpectInLoop': true,
                   'onlyFunctionsWithExpectInCallback': true 
@@ -30,11 +35,7 @@ module.exports = {
             ],
             'jest/prefer-each': 'error',
             'jest/prefer-to-have-length': 'error',
-            'jest/max-expects': [
-               'error', {
-                  max: 2 
-               } 
-            ],
+            'jest/max-expects': [ 'error', { max: 2 } ],
             'jest/prefer-expect-resolves': 'error',
             'jest/prefer-lowercase-title': 'error',
             'jest/no-deprecated-functions': 'error',
@@ -105,7 +106,9 @@ module.exports = {
       'no-useless-constructor': 'warn',
       'no-useless-rename': 'warn',
       'prefer-spread': 'warn',
-      'sort-keys': 'warn',
+      'rest-spread-spacing': [ 'warn', 'never' ],
+      'computed-property-spacing': [ 'warn', 'never' ],
+      'no-whitespace-before-property': 'warn',
       'yoda': 'warn',
     
       // ESLINT POSSIBLE PROBLEMS (https://eslint.org/docs/latest/rules/#possible-problems)
@@ -114,35 +117,29 @@ module.exports = {
 
       // ESLINT LAYOUT & FORMATTING (https://eslint.org/docs/latest/rules/#layout--formatting)
       'multiline-ternary': [ 'warn', 'always' ],
-      'indent': [
-         'warn', 3, {
-            'SwitchCase': 1 
-         } 
-      ],
+      'indent': [ 'warn', 3, { 'SwitchCase': 1 } ],
       'key-spacing': [
-         'warn', {
+         'warn',
+         {
             beforeColon: false,
             afterColon: true 
          } 
       ],
-      'no-multiple-empty-lines': [
-         'warn', {
-            max: 1 
-         } 
-      ],
+      'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
       'semi': [ 'warn', 'always' ],
       'no-multi-spaces': 'warn',
-      'rest-spread-spacing': [ 'warn', 'always' ],
       'space-in-parens': [ 'warn', 'never' ],
       'semi-spacing': 'warn',
       'array-bracket-newline': [
-         'warn', {
+         'warn',
+         {
             'multiline': true,
             'minItems': 4
          } 
       ],
       'array-element-newline': [
-         'warn', {
+         'warn',
+         {
             'multiline': true,
             'minItems': 4
          } 
@@ -155,7 +152,8 @@ module.exports = {
       'quotes': [ 'warn', 'single' ],
       'array-bracket-spacing': [ 'warn', 'always' ],
       'arrow-spacing': [
-         'warn', {
+         'warn',
+         {
             'before': true,
             'after': true 
          } 
@@ -164,35 +162,30 @@ module.exports = {
       'padded-blocks': [ 'warn', 'never' ],
       'arrow-parens': 'warn',
       'comma-spacing': [
-         'warn', {
+         'warn',
+         {
             before: false,
             after: true 
          } 
       ],
       'space-infix-ops': 'warn',
       'keyword-spacing': [
-         'warn', {
+         'warn',
+         {
             before: true,
             after: true 
          } 
       ],
-      'eol-last': ['warn', 'always'],
+      'eol-last': [ 'warn', 'always' ],
       'newline-after-var': 'warn',
       'comma-dangle': [ 'warn', 'never' ],
       'comma-style': [ 'warn', 'last' ],
-      'object-property-newline': [
-         'warn', {
-            'allowAllPropertiesOnSameLine': false 
-         } 
-      ],
+      'object-property-newline': [ 'warn', { 'allowAllPropertiesOnSameLine': false } ],
       'object-curly-newline': [
-         'warn', {
-            'ObjectExpression': {
-               'minProperties': 2
-            },
-            'ObjectPattern': {
-               'multiline': true
-            },
+         'warn',
+         {
+            'ObjectExpression': { 'minProperties': 2 },
+            'ObjectPattern': { 'multiline': true },
             'ImportDeclaration': {
                'multiline': true,
                'minProperties': 4 
@@ -203,48 +196,64 @@ module.exports = {
             }
          }
       ],
-      'brace-style': [
-         'warn', '1tbs', {
-            allowSingleLine: false 
-         } 
-      ],
-      'max-statements-per-line': [
-         'warn', {
-            'max': 1 
-         } 
-      ],
-      'lines-between-class-members': [
-         'warn', 'always', {
-            'exceptAfterSingleLine': true 
-         } 
-      ],
+      'brace-style': [ 'warn', '1tbs', { allowSingleLine: false } ],
+      'max-statements-per-line': [ 'warn', { 'max': 1 } ],
+      'lines-between-class-members': [ 'warn', 'always', { 'exceptAfterSingleLine': true } ],
       'padding-line-between-statements': [
-         'warn', {
+         'warn',
+         {
             // always add new line BEFORE these
             blankLine: 'always',
             prev: '*', 
             next: [
-               'block', 'block-like', 'if', 'for', 'switch', 'export', 'return', 'class', 'throw', 'multiline-const', 'multiline-expression', 'multiline-let'
+               'block',
+               'block-like',
+               'if',
+               'for',
+               'switch',
+               'export',
+               'return',
+               'class',
+               'throw',
+               'multiline-const',
+               'multiline-expression',
+               'multiline-let'
             ] 
-         }, {
+         },
+         {
             // always add new line AFTER these
             blankLine: 'always',
             next: '*', 
             prev: [
-               'block', 'block-like', 'if', 'for', 'switch', 'class', 'multiline-const', 'multiline-let'
+               'block',
+               'block-like',
+               'if',
+               'for',
+               'switch',
+               'class',
+               'multiline-const',
+               'multiline-let'
            
             ] 
-         }, {
+         },
+         {
             // never add new lines BEFORE these
             blankLine: 'never',
             prev: '*',
-            next: [ 'break', 'case', 'import', 'default' ] 
-         }, {
+            next: [
+               'break',
+               'case',
+               'import',
+               'default' 
+            ] 
+         },
+         {
             // never add lines BETWEEN these
             blankLine: 'never',
             prev: 'expression',
             next: 'expression' 
-         }, {
+         },
+         {
             blankLine: 'never',
             prev: [ 'singleline-const', 'singleline-let' ],
             next: [ 'singleline-const', 'singleline-let' ]
