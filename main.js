@@ -105,7 +105,6 @@ module.exports = {
       'no-useless-constructor': 'warn',
       'no-useless-rename': 'warn',
       'prefer-spread': 'warn',
-      'require-await': 'warn',
       'sort-keys': 'warn',
       'yoda': 'warn',
     
@@ -177,6 +176,7 @@ module.exports = {
             after: true 
          } 
       ],
+      'eol-last': ['warn', 'always'],
       'newline-after-var': 'warn',
       'comma-dangle': [ 'warn', 'never' ],
       'comma-style': [ 'warn', 'last' ],
