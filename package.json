@@ -8,7 +8,8 @@
     "url": "git+https://github.com/danielc92/eslint-config-dc.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run test"
   },
   "keywords": [
     "eslint",
