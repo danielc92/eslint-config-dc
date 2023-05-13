@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-platypus",
-  "version": "1.13.5",
+  "version": "1.13.6",
   "description": "reusable linting config for eslint",
   "main": "main.js",
   "repository": {
