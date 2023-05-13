@@ -15,7 +15,8 @@
     "LICENSE",
     "main.js",
     "react-addon.js",
-    "rxjs-addon.js"
+    "rxjs-addon.js",
+    "src/configs/base.js"
   ],
   "keywords": [
     "eslint",
