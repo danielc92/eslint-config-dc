@@ -63,7 +63,7 @@ describe('.eslintrc.js suite', () => {
             {
                ruleId: 'react/jsx-pascal-case',
                severity: 1 
-            },
+            }
          ] 
       }, 
       {
@@ -153,6 +153,32 @@ describe('.eslintrc.js suite', () => {
                ruleId: 'no-secrets/no-secrets',
                severity: 2 
             } 
+         ]
+      },
+      {
+         testName: 'promise-plugin',
+         input: [ './src/testing-files/promise-plugin' ],
+         output: [
+            {
+               ruleId: 'promise/no-new-statics',
+               severity: 2 
+            },
+            {
+               ruleId: 'promise/catch-or-return',
+               severity: 2 
+            },
+            {
+               ruleId: 'promise/no-return-wrap',
+               severity: 2 
+            },
+            {
+               ruleId: 'promise/param-names',
+               severity: 2 
+            },
+            {
+               ruleId: 'promise/no-return-in-finally',
+               severity: 1
+            }
          ]
       },
       {
