@@ -8,7 +8,8 @@ module.exports = {
       '@typescript-eslint',
       'no-secrets',
       'sonarjs',
-      'promise' 
+      'promise',
+      'import'
    ],
    'parser': '@typescript-eslint/parser',
    'parserOptions': {
@@ -16,7 +17,16 @@ module.exports = {
       'project': './tsconfig.json',
       'sourceType': 'module'
    },
+   'settings': {
+      "import/parsers": {
+         "@typescript-eslint/parser": [".ts", ".tsx"]
+       },
+       "import/resolver": {
+         "typescript": {}
+       }
+   },
    'overrides': [
+
       // JEST/TESTING (ZERO TOLERANCE)
       // These rules only apply to .spec.js, .spec.ts, .test.js, .test.ts files
       {
@@ -48,6 +58,23 @@ module.exports = {
    ],
    // NOTE RULES BELOW ARE IN *ADDITION* TO RECOMMENDED CONFIGS
    'rules': {
+      // IMPORT RULES (ZERO TOLERANCE)
+      'import/no-cycle': ['error', {maxDepth: 5}],
+      'import/no-self-import': 'error',
+      'import/default': 'error',
+      'import/no-mutable-exports': 'error',
+      'import/namespace': 'error',
+      'import/named': 'error',
+      'import/export': 'error',
+      'import/no-empty-named-blocks': 'error',
+      // IMPORT RULES (WARN)
+      'import/no-unresolved': 'warn',
+      // this rule does not seem to work...
+      // 'import/no-relative-packages': 'warn',
+      'import/no-named-as-default': 'warn',
+      'import/no-named-as-default-member': 'warn',
+      'import/no-deprecated': 'warn',
+      'import/exports-last': 'warn',
 
       // SECURITY: SECRETS (ZERO TOLERANCE)
       'no-secrets/no-secrets': 'error',
