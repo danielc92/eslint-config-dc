@@ -1,71 +1,188 @@
 import { ESLint } from 'eslint';
 
-describe('main config', () => {
-   it('should lint file successfully, and return some warnings', async () => {
+describe('.eslintrc.js suite', () => {
+   it.each<{
+      testName: string,
+      input: string[],
+      output: {ruleId: string, severity: 0 | 1 | 2}[]
+   }>([
+      {
+         testName: 'eslint-core',
+         input: [ './src/testing-files/eslint-core' ],
+         output: [ 
+            {
+               ruleId: 'no-multi-spaces',
+               severity: 1 
+            },
+            {
+               ruleId: 'semi',
+               severity: 1 
+            },
+            {
+               ruleId: 'padding-line-between-statements',
+               severity: 1 
+            },
+            {
+               ruleId: 'quotes',
+               severity: 1 
+            },
+            {
+               ruleId: 'object-curly-spacing',
+               severity: 1 
+            },
+            {
+               ruleId: 'eol-last',
+               severity: 1 
+            },
+            {
+               ruleId: 'padded-blocks',
+               severity: 1 
+            },
+            {
+               ruleId: 'no-multiple-empty-lines',
+               severity: 1 
+            },
+            {
+               ruleId: 'key-spacing',
+               severity: 1 
+            }
+         ] 
+      }, 
+      {
+         testName: 'react-plugin',
+         input: [ './src/testing-files/react-plugin' ],
+         output: [ 
+            {
+               ruleId: 'react/jsx-indent',
+               severity: 1 
+            },
+            {
+               ruleId: 'react/jsx-tag-spacing',
+               severity: 1 
+            },
+            {
+               ruleId: 'react/jsx-pascal-case',
+               severity: 1 
+            },
+         ] 
+      }, 
+      {
+         testName: 'react-plugin-react-hooks',
+         input: [ './src/testing-files/react-plugin' ],
+         output: [ 
+         
+            {
+               ruleId: 'react-hooks/rules-of-hooks',
+               severity: 1
+            },
+            {
+               ruleId: 'react-hooks/exhaustive-deps',
+               severity: 1
+            }
+         ] 
+      }, 
+      {
+         testName: 'import-plugin',
+         input: [ './src/testing-files/import-plugin' ],
+         output: [
+            {
+               ruleId: 'import/no-mutable-exports',
+               severity: 2 
+            },
+            {
+               ruleId: 'import/exports-last',
+               severity: 1 
+            } 
+         ] 
+      }, 
+      {
+         testName: 'rxjs-plugin',
+         input: [ './src/testing-files/rxjs-plugin' ],
+         output: [
+            {
+               ruleId: 'rxjs/no-create',
+               severity: 2 
+            } 
+         ] 
+      },
+      {
+         testName: 'sonarjs-plugin',
+         input: [ './src/testing-files/sonarjs-plugin' ],
+         output: [ 
+            {
+               ruleId: 'sonarjs/no-one-iteration-loop',
+               severity: 2 
+            },
+            {
+               ruleId: 'sonarjs/no-redundant-jump',
+               severity: 2 
+            },
+            {
+               ruleId: 'sonarjs/no-same-line-conditional',
+               severity: 2 
+            },
+            {
+               ruleId: 'sonarjs/no-inverted-boolean-check',
+               severity: 2 
+            } 
+         ] 
+      },
+      {
+         testName: 'typescript-plugin',
+         input: [ './src/testing-files/typescript-plugin' ],
+         output: [
+            {
+               ruleId: '@typescript-eslint/ban-types',
+               severity: 2 
+            },
+            {
+               ruleId: '@typescript-eslint/no-unused-vars',
+               severity: 1 
+            },
+            {
+               ruleId: '@typescript-eslint/no-empty-interface',
+               severity: 2 
+            }
+         ] 
+      },
+      {
+         testName: 'secret-plugin',
+         input: [ './src/testing-files/secret-plugin' ],
+         output: [
+            {
+               ruleId: 'no-secrets/no-secrets',
+               severity: 2 
+            } 
+         ]
+      },
+      {
+         testName: 'jest-plugin',
+         input: [ './src/testing-files/jest-plugin' ],
+         output: [
+            {
+               ruleId: 'jest/no-conditional-expect',
+               severity: 2 
+            },
+            {
+               ruleId: 'jest/no-conditional-in-test',
+               severity: 2 
+            },
+            {
+               ruleId: 'jest/prefer-expect-assertions',
+               severity: 2 
+            } 
+         ]
+      } 
+   ])('$testName - linting against $input should contain output: $output', async ({ input, output, testName }) => {
       expect.assertions(1);
-      
-      const cli = new ESLint({ useEslintrc: true }); 
-      const res = await cli.lintFiles('./src/testing-files/file2.ts');
-      
-      expect(res[0].warningCount).toBeGreaterThan(0);
-   }); 
-   it('should lint file successfully, and return some warnings #2', async () => {
-      expect.assertions(1);
-      
       const cli = new ESLint({ useEslintrc: true });
-      const res = await cli.lintFiles('./src/testing-files/file1.js');
+      const res = await cli.lintFiles(input);
    
-      expect(res[0].warningCount).toBeGreaterThan(0);
-   });   
-   it('should be able to pick up linting problems specific to jest plugin', async () => {
-      expect.assertions(1);
-      
-      const cli = new ESLint({ useEslintrc: true });
-      const res = await cli.lintFiles([ './src/testing-files/index.spec.ts' ]);
-   
+      // console.log(res[0].messages.map((x) => x.ruleId));
       expect(res[0].messages).toEqual(
-         expect.arrayContaining([ expect.objectContaining({ ruleId: 'jest/no-conditional-expect' }), expect.objectContaining({ ruleId: 'jest/no-conditional-in-test' }), expect.objectContaining({ ruleId: 'jest/prefer-expect-assertions' }) ])
-      );
-   });   
-   it('should be able to pick up linting problems specific to import plugin', async () => {
-      expect.assertions(1);
-      
-      const cli = new ESLint({ useEslintrc: true });
-      const res = await cli.lintFiles([ './src/testing-files/imp1.ts', './src/testing-files/imp4.ts', './src/testing-files/imp3.ts' ]);
-   
-      expect(res[0].messages).toEqual(
-         expect.arrayContaining([ expect.objectContaining({ ruleId: 'import/no-mutable-exports' }), expect.objectContaining({ ruleId: 'import/exports-last' }) ])
+         expect.arrayContaining(
+            output.map((obj) => expect.objectContaining(obj))
+         )
       );
    });
 });
-describe('react-addon config', () => {
-   it('is able to pick up linting issues specific to react plugin', async () => {
-      expect.assertions(1);
-      
-      // weirdly typescript detects error here, yet eslint runs the config fine
-      const cli = new ESLint({ useEslintrc: true });
-      const res = await cli.lintFiles('./src/testing-files/react-example.tsx');
-
-      expect(res[0].messages).toEqual(
-         expect.arrayContaining([
-            expect.objectContaining({ ruleId: 'react/jsx-indent' }),
-            expect.objectContaining({ ruleId: 'react/jsx-tag-spacing' }),
-            expect.objectContaining({ ruleId: 'react/jsx-pascal-case' }),
-            expect.objectContaining({ ruleId: 'react-hooks/rules-of-hooks' })
-         ])
-      );
-   });
-}); 
-describe('rxjs-addon config', () => {
-   it('is able to pick up linting issues specific to rxjs plugin', async () => {
-      expect.assertions(1);
-      
-      const cli = new ESLint({ useEslintrc: true });
-      const res = await cli.lintFiles('./src/testing-files/rxjs-example.tsx');
-
-      expect(res[0].messages).toEqual(
-         expect.arrayContaining([ expect.objectContaining({ ruleId: 'rxjs/no-create' }) ])
-      );
-   });
-});
-

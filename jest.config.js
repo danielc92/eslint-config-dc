@@ -6,5 +6,5 @@
 module.exports = {
    clearMocks: true,
    coverageProvider: 'v8',
-
+   testPathIgnorePatterns: ['src/testing-files/jest-plugin']
 };

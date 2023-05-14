@@ -3,7 +3,7 @@ import React from 'react';
 const myComponent = () => {
 
     const [a,aa] = useState("blah")
-    useEffect(() => {
+    React.useEffect(() => {
       const n = a
     console.log(n) 
 },[])
