@@ -1,5 +1,12 @@
 
 
+## [1.14.4](https://github.com/danielc92/eslint-config-dc/compare/v1.14.3...v1.14.4) (2023-05-15)
+
+
+### Bug Fixes
+
+* fix conflicts with indent in react ([4980019](https://github.com/danielc92/eslint-config-dc/commit/4980019cfc094c22d84442e5bed25bc9f6c322ca))
+
 ## [1.14.3](https://github.com/danielc92/eslint-config-dc/compare/v1.14.2...v1.14.3) (2023-05-14)
 
 
