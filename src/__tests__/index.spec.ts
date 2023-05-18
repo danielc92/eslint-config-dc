@@ -67,6 +67,21 @@ describe('.eslintrc.js suite', () => {
          ] 
       }, 
       {
+         testName: 'jestdom-plugin',
+         input: [ './src/testing-files/jestdom-plugin' ],
+         output: [ 
+      
+            {
+               ruleId: 'jest-dom/prefer-to-have-class',
+               severity: 2
+            },
+            {
+               ruleId: 'jest-dom/prefer-to-have-style',
+               severity: 2 
+            }
+         ] 
+      }, 
+      {
          testName: 'react-plugin-react-hooks',
          input: [ './src/testing-files/react-plugin' ],
          output: [ 

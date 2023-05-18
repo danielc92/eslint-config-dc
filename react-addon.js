@@ -4,7 +4,16 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+     
+    ],
+    'overrides':[
+        {
+			files: [
+            '**/__tests__/**/*.[jt]s?(x)', 
+            '**/?(*.)+(spec|test).[jt]s?(x)'],
+			extends: ["plugin:jest-dom/recommended"],
+		},
     ],
     'parser': '@typescript-eslint/parser',
     'parserOptions': {
@@ -14,7 +23,11 @@ module.exports = {
             "jsx": true
           }
     },
-    plugins: ["react", "@typescript-eslint"],
+    plugins: [
+        "react", 
+        "@typescript-eslint", 
+        "jest-dom"
+    ],
     rules:  {
         // REACT RULES 
         "react/jsx-no-leaked-render": "error",

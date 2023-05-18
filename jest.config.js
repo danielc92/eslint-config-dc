@@ -4,7 +4,11 @@
  */
 
 module.exports = {
+   testEnvironment: "jsdom",
    clearMocks: true,
    coverageProvider: 'v8',
-   testPathIgnorePatterns: ['src/testing-files/jest-plugin']
+   testPathIgnorePatterns: ['src/testing-files'],
+   "transform": {
+      "\\.[jt]sx?$": "babel-jest"
+    },
 };

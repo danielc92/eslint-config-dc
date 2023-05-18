@@ -32,10 +32,10 @@ The default configuration contains rules for
 
 #### Using the React add on
 
-If you wish to use the React configuration, which includes react hooks and React rules, install these additional dependencies:
+If you wish to use the React configuration, which includes linting rules for react, react hooks as well as jest dom, install these additional dependencies:
 
 ```
-npm i eslint-plugin-react eslint-plugin-react-hooks --save-dev
+npm i eslint-plugin-jest-dom eslint-plugin-react eslint-plugin-react-hooks --save-dev
 ```
 
 Next extend the eslint config
