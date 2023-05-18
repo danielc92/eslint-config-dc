@@ -1,5 +1,12 @@
 
 
+## [1.15.0](https://github.com/danielc92/eslint-config-dc/compare/v1.14.4...v1.15.0) (2023-05-18)
+
+
+### Features
+
+* added support for jestdom plugin ([09202ca](https://github.com/danielc92/eslint-config-dc/commit/09202cac9c2286eb204dbd84d7b376d5886a187d))
+
 ## [1.14.4](https://github.com/danielc92/eslint-config-dc/compare/v1.14.3...v1.14.4) (2023-05-15)
 
 
