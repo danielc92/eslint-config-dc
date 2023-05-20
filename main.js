@@ -115,6 +115,9 @@ module.exports = {
 
       // TYPESCRIPT RULES (https://typescript-eslint.io/rules/)
       '@typescript-eslint/no-floating-promises': 'warn',
+      '@typescript-eslint/no-mixed-enums': 'warn',
+      '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
+      '@typescript-eslint/prefer-enum-initializers': 'warn',
 
       // ESLINT SUGGESTIONS (https://eslint.org/docs/latest/rules/#suggestions)
       'curly': 'warn',
