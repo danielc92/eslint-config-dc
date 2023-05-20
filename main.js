@@ -2,7 +2,7 @@ const base = require('./src/configs/base');
 
 module.exports = {
    
-   ... base,
+   ...base,
    'extends': [ 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:promise/recommended' ],
    'plugins': [
       '@typescript-eslint',
@@ -18,12 +18,8 @@ module.exports = {
       'sourceType': 'module'
    },
    'settings': {
-      "import/parsers": {
-         "@typescript-eslint/parser": [".ts", ".tsx"]
-       },
-       "import/resolver": {
-         "typescript": {}
-       }
+      'import/parsers': { '@typescript-eslint/parser': [ '.ts', '.tsx' ] },
+      'import/resolver': { 'typescript': {} }
    },
    'overrides': [
 
@@ -59,7 +55,7 @@ module.exports = {
    // NOTE RULES BELOW ARE IN *ADDITION* TO RECOMMENDED CONFIGS
    'rules': {
       // IMPORT RULES (ZERO TOLERANCE)
-      'import/no-cycle': ['error', {maxDepth: 5}],
+      'import/no-cycle': [ 'error', { maxDepth: 5 } ],
       'import/no-self-import': 'error',
       'import/default': 'error',
       'import/no-mutable-exports': 'error',
@@ -118,7 +114,17 @@ module.exports = {
       '@typescript-eslint/no-mixed-enums': 'warn',
       '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
       '@typescript-eslint/prefer-enum-initializers': 'warn',
-
+      '@typescript-eslint/prefer-literal-enum-member': 'warn',
+      '@typescript-eslint/prefer-includes': 'warn',
+      '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
+      '@typescript-eslint/array-type': [
+         'warn',
+         {
+            default: 'generic',
+            readonly: 'generic' 
+         } 
+      ],
+      
       // ESLINT SUGGESTIONS (https://eslint.org/docs/latest/rules/#suggestions)
       'curly': 'warn',
       'default-case': 'warn',
@@ -147,7 +153,31 @@ module.exports = {
 
       // ESLINT LAYOUT & FORMATTING (https://eslint.org/docs/latest/rules/#layout--formatting)
       'multiline-ternary': [ 'warn', 'always' ],
-      'indent': [ 'warn', 3, { 'SwitchCase': 1, 'ignoredNodes':  ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXFragment', 'JSXOpeningFragment', 'JSXClosingFragment', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'] }],
+      'indent': [
+         'warn',
+         3,
+         {
+            'SwitchCase': 1,
+            'ignoredNodes': [
+               'JSXElement',
+               'JSXElement > *',
+               'JSXAttribute',
+               'JSXIdentifier',
+               'JSXNamespacedName',
+               'JSXMemberExpression',
+               'JSXSpreadAttribute',
+               'JSXExpressionContainer',
+               'JSXOpeningElement',
+               'JSXClosingElement',
+               'JSXFragment',
+               'JSXOpeningFragment',
+               'JSXClosingFragment',
+               'JSXText',
+               'JSXEmptyExpression',
+               'JSXSpreadChild'
+            ] 
+         } 
+      ],
       'key-spacing': [
          'warn',
          {
