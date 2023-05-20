@@ -144,7 +144,7 @@ module.exports = {
 
       // ESLINT LAYOUT & FORMATTING (https://eslint.org/docs/latest/rules/#layout--formatting)
       'multiline-ternary': [ 'warn', 'always' ],
-      'indent': [ 'warn', 3, { 'SwitchCase': 1, 'ignoredNodes': ['JSXElement *'] } ],
+      'indent': [ 'warn', 3, { 'SwitchCase': 1, 'ignoredNodes':  ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXFragment', 'JSXOpeningFragment', 'JSXClosingFragment', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'] }],
       'key-spacing': [
          'warn',
          {

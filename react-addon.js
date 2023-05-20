@@ -43,11 +43,12 @@ module.exports = {
         "react/jsx-no-useless-fragment": "warn",
         "react/jsx-equals-spacing": ["warn", "never"],
         "react/jsx-curly-spacing": ["warn", {when: "never"}],
-        "react/jsx-curly-newline": ["warn", { multiline: "require", singleline: "forbid" }],
+        "react/jsx-curly-newline": ["warn", { multiline: "forbid", singleline: "forbid" }],
         "react/jsx-indent": ["warn", 3],
         "react/jsx-wrap-multilines": ["warn", {
             "declaration": "parens-new-line",
             "assignment": "parens-new-line",
+            "condition": "parens-new-line",
             "return": "parens-new-line",
             "arrow": "parens-new-line",
           }],
