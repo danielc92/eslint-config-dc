@@ -1,5 +1,12 @@
 
 
+## [1.15.1](https://github.com/danielc92/eslint-config-dc/compare/v1.15.0...v1.15.1) (2023-05-20)
+
+
+### Bug Fixes
+
+* conflicts with jsx expression indent been resolved ([6dab899](https://github.com/danielc92/eslint-config-dc/commit/6dab899162551ab272cfc658ae3f509e43af4a6f))
+
 ## [1.15.0](https://github.com/danielc92/eslint-config-dc/compare/v1.14.4...v1.15.0) (2023-05-18)
 
 
