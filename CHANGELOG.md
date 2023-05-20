@@ -1,5 +1,13 @@
 
 
+## [1.16.0](https://github.com/danielc92/eslint-config-dc/compare/v1.15.2...v1.16.0) (2023-05-20)
+
+
+### Features
+
+* broaden enum rules ([7a0acf2](https://github.com/danielc92/eslint-config-dc/commit/7a0acf20332f3a7277bd44efafbce87d345b04aa))
+* broaden typescript-eslint warnings ([041faff](https://github.com/danielc92/eslint-config-dc/commit/041faffaf3cd9e43f9660aa3dcb8cd19aa3f6684))
+
 ## [1.15.2](https://github.com/danielc92/eslint-config-dc/compare/v1.15.1...v1.15.2) (2023-05-20)
 
 
