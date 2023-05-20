@@ -204,7 +204,8 @@ module.exports = {
          } 
       ],
       'eol-last': [ 'warn', 'always' ],
-      'newline-after-var': 'warn',
+      // conflicts with padding-line-between-statements
+      'newline-after-var': 'off',
       'comma-dangle': [ 'warn', 'never' ],
       'comma-style': [ 'warn', 'last' ],
       'object-property-newline': [ 'warn', { 'allowAllPropertiesOnSameLine': false } ],
