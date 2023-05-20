@@ -1,5 +1,12 @@
 
 
+## [1.15.2](https://github.com/danielc92/eslint-config-dc/compare/v1.15.1...v1.15.2) (2023-05-20)
+
+
+### Bug Fixes
+
+* multiple statements combining on same line ([b38802b](https://github.com/danielc92/eslint-config-dc/commit/b38802b2005916f946622ed715d8ae63bc30326d))
+
 ## [1.15.1](https://github.com/danielc92/eslint-config-dc/compare/v1.15.0...v1.15.1) (2023-05-20)
 
 
