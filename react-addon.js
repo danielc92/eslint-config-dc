@@ -30,6 +30,8 @@ module.exports = {
     ],
     rules:  {
         // REACT RULES 
+        "react/jsx-handler-names": ["warn", {checkLocalVariables: true}],
+        "react/jsx-no-bind": "warn",
         "react/jsx-no-leaked-render": "error",
         "react/jsx-first-prop-new-line": ["warn", "never"],
         "react/jsx-indent-props": ["warn", "first"],

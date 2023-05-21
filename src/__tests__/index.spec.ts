@@ -3,8 +3,8 @@ import { ESLint } from 'eslint';
 describe('.eslintrc.js suite', () => {
    it.each<{
       testName: string,
-      input: string[],
-      output: {ruleId: string, severity: 0 | 1 | 2}[]
+      input: Array<string>,
+      output: Array<{ruleId: string, severity: 0 | 1 | 2}>
    }>([
       {
          testName: 'eslint-core',
@@ -52,6 +52,10 @@ describe('.eslintrc.js suite', () => {
          testName: 'react-plugin',
          input: [ './src/testing-files/react-plugin' ],
          output: [ 
+            {
+               ruleId: 'react/jsx-handler-names',
+               severity: 1
+            },
             {
                ruleId: 'react/jsx-indent',
                severity: 1 
