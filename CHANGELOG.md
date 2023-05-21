@@ -1,5 +1,17 @@
 
 
+## [1.17.0](https://github.com/danielc92/eslint-config-dc/compare/v1.16.0...v1.17.0) (2023-05-21)
+
+
+### Features
+
+* consistent react handler function names ([c56b262](https://github.com/danielc92/eslint-config-dc/commit/c56b262549ccffc5fa896b8353c724a47bf373ce))
+
+
+### Maintenance
+
+* update packages ([de0ed6e](https://github.com/danielc92/eslint-config-dc/commit/de0ed6e53b9fb4c6e2645debc15d6ec5721a351a))
+
 ## [1.16.0](https://github.com/danielc92/eslint-config-dc/compare/v1.15.2...v1.16.0) (2023-05-20)
 
 
