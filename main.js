@@ -260,66 +260,27 @@ module.exports = {
       'brace-style': [ 'warn', '1tbs', { allowSingleLine: false } ],
       'max-statements-per-line': [ 'warn', { 'max': 1 } ],
       'lines-between-class-members': [ 'warn', 'always', { 'exceptAfterSingleLine': true } ],
-      'padding-line-between-statements': [
-         'warn',
-         {
-            // always add new line BEFORE these
-            blankLine: 'always',
-            prev: '*', 
-            next: [
-               'block',
-               'block-like',
-               'if',
-               'for',
-               'switch',
-               'export',
-               'return',
-               'class',
-               'throw',
-               'multiline-const',
-               'multiline-expression',
-               'multiline-let'
-            ] 
-         },
-         {
+      'padding-line-between-statements': ['warn', 
+      { blankLine: "always", prev: ["const", "let", "var"], next: "*"}, 
+      { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"]},
+      {
             // always add new line AFTER these
             blankLine: 'always',
             next: '*', 
             prev: [
-               'block',
                'block-like',
-               'if',
-               'for',
-               'switch',
+               'block',
                'class',
+               'for',
+               'function',
+               'if',
                'multiline-const',
-               'multiline-let'
+               'multiline-let',
+               'switch',
            
             ] 
          },
-         {
-            // never add new lines BEFORE these
-            blankLine: 'never',
-            prev: '*',
-            next: [
-               'break',
-               'case',
-               'import',
-               'default' 
-            ] 
-         },
-         {
-            // never add lines BETWEEN these
-            blankLine: 'never',
-            prev: 'expression',
-            next: 'expression' 
-         },
-         {
-            blankLine: 'never',
-            prev: [ 'singleline-const', 'singleline-let' ],
-            next: [ 'singleline-const', 'singleline-let' ]
-         }
-      ]
+   ]
 
    }
 };
