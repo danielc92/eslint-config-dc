@@ -8,6 +8,9 @@ const  badFunc   =  (   args : string )  =>   {
    let obj  = {   "foo" :  "bar"}
 
 }
+const anotherFunc = (): number => {
+   return 33
+}
 
 /*
 'no-multi-spaces', 
