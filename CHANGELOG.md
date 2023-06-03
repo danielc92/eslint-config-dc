@@ -1,5 +1,17 @@
 
 
+## [1.17.1](https://github.com/danielc92/eslint-config-dc/compare/v1.17.0...v1.17.1) (2023-06-03)
+
+
+### Bug Fixes
+
+* reduce padding-line-between-statements rules ([ea5e462](https://github.com/danielc92/eslint-config-dc/commit/ea5e4626e81b20a8ceae917d1275977b37937788))
+
+
+### Maintenance
+
+* update test ([e014961](https://github.com/danielc92/eslint-config-dc/commit/e014961b0141855c8aa7bfbf8d75b3648e0a90bf))
+
 ## [1.17.0](https://github.com/danielc92/eslint-config-dc/compare/v1.16.0...v1.17.0) (2023-05-21)
 
 
