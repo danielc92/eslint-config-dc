@@ -1,5 +1,12 @@
 
 
+## [1.17.2](https://github.com/danielc92/eslint-config-dc/compare/v1.17.1...v1.17.2) (2023-06-10)
+
+
+### Maintenance
+
+* npm maintenance ([45f12ed](https://github.com/danielc92/eslint-config-dc/commit/45f12ed644a485c57d69b0c22eb0912f1c3ab7e1))
+
 ## [1.17.1](https://github.com/danielc92/eslint-config-dc/compare/v1.17.0...v1.17.1) (2023-06-03)
 
 
