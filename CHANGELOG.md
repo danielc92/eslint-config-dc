@@ -1,5 +1,12 @@
 
 
+## [1.18.0-2](https://github.com/danielc92/eslint-config-dc/compare/1.18.0-1...1.18.0-2) (2023-06-29)
+
+
+### Maintenance
+
+* publish package on release ([316155f](https://github.com/danielc92/eslint-config-dc/commit/316155f1e65e7650b886331596b063f3fbab33ba))
+
 ## [1.18.0-1](https://github.com/danielc92/eslint-config-dc/compare/1.18.0-0...1.18.0-1) (2023-06-29)
 
 
