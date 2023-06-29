@@ -1,5 +1,12 @@
 
 
+## [1.17.3](https://github.com/danielc92/eslint-config-dc/compare/v1.17.2...v1.17.3) (2023-06-29)
+
+
+### Maintenance
+
+* added husky prepare script ([b975883](https://github.com/danielc92/eslint-config-dc/commit/b9758834de0e9273060dc5ab5963cfe26064fb01))
+
 ## [1.17.2](https://github.com/danielc92/eslint-config-dc/compare/v1.17.1...v1.17.2) (2023-06-10)
 
 
