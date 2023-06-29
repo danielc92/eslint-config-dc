@@ -1,6 +1,4 @@
-module.exports = {
-   'env': {
-      'browser': false,
-      'es2021': true
-   }
-};
+module.exports = { 'env': {
+   'browser': false,
+   'es2022': true
+} };

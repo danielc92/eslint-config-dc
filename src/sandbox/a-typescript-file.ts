@@ -1,19 +1,18 @@
-import { hi } from './i';
-import { hid } from './i';
 
+const regexd = /\w/;
+const regedx = /\w/i;
+const regefasx = /\W/;
+const regafex = /\W/i;
+const regffex = /\d\.\w-\D/i;
 
-console.log(badObs);
-
-enum Foo {
-   DONE = 'DONE',
-   PROCESSING = 'PROCESSING',
-   INCOMPLETE =
+enum FooEnum {
+           'DONE' = 'DONE',
+   'PROCESSING' = 'PROCESSING',
+   'INCOMPLETE' = 'd'
 }
 
-export { Foo };
-
 class Dasdas {
-     singlelineA: string;
+   singlelineA: string;
    singlelineS: string;
    singlelineD: string;
 
@@ -59,20 +58,27 @@ const foo = () => {
    const n = new Date().getDay();
 
    switch (n) {
-      case 2:
+      case 2: {
          console.log('haha'); 
          break;
-      case 5:
+      }
+
+      case 5: {
          console.log('hahaa');
          break;
-      case 6:
+      }
+
+      case 6: {
          console.log('hahadd');
-         break; 
-      default: 
+         break;
+      }
+ 
+      default: { 
          console.log('kh');
+      }
    }
 
-   const arr = [
+   const array_ = [
       1,
       2,
       3,
@@ -83,16 +89,14 @@ const foo = () => {
    const badawat = async () => {
       const r = 'lol';
 
-      return Promise.resolve(1654984);
+      return 1_654_984;
    };
 
    const res = badawat();
 
-   const obj1 = {
-      'daniel': 'email@outloo' 
-   };
+   const object1 = { 'daniel': 'email@outloo' };
 
-   const dddd = obj1;
+   const dddd = object1;
    const N = 'Daniel';
  
    console.log(N);
@@ -149,23 +153,21 @@ const foo = () => {
    ];
 
    try {
-      const r = 34234;
-   } catch (e) {
-      console.log(e);
+      const r = 34_234;
+   } catch (error) {
+      console.log(error);
    }
 
    while (array.length > 0) {
       array.push(1234);
    }
 
-   for (let index = 0; index < array.length; index++) {
-      const element = array[index];
-      
+   for (const element of array) {
       return element + 44;
    }
 
    if (tern.length > 0) {
-      const err = new Error();
+      const error = new Error();
 
       throw 'should ntoi be';
    }
@@ -181,7 +183,7 @@ if (true) {
    rr5 = '5';
 }
 
-const arr1 = [
+const array1 = [
    1,
    2,
    2,
@@ -274,7 +276,7 @@ while (sarr.length > 0) {
    console.log(sarr);
 }
 
-const arr31 = [
+const array31 = [
    1,
    2,
    2,
@@ -287,8 +289,8 @@ const arr31 = [
    3
 ];
 
-const [ first, second ] = arr1;
-const arr2 = [ 3, 3 ];
+const [ first, second ] = array1;
+const array2 = [ 3, 3 ];
 const nosemi = 'nosemi';
  
 console.log(nosemi);

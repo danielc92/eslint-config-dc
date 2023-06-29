@@ -186,15 +186,37 @@ describe('.eslintrc.js suite', () => {
                severity: 2 
             } 
          ]
+      },
+      {
+         testName: 'unicorn',
+         input: [ './src/testing-files/unicorn' ],
+         output: [
+            {
+               ruleId: 'unicorn/consistent-function-scoping',
+               severity: 2 
+            },
+            {
+               ruleId: 'unicorn/prevent-abbreviations',
+               severity: 2 
+            },
+            {
+               ruleId: 'unicorn/error-message',
+               severity: 2 
+            },
+            {
+               ruleId: 'unicorn/prefer-set-size',
+               severity: 2 
+            }
+         ]
       } 
    ])('$testName - linting against $input should contain output: $output', async ({ input, output, testName }) => {
       expect.assertions(1);
       const cli = new ESLint({ useEslintrc: true });
-      const res = await cli.lintFiles(input);
+      const lintingResults = await cli.lintFiles(input);
    
-      expect(res[0].messages).toEqual(
+      expect(lintingResults[0].messages).toEqual(
          expect.arrayContaining(
-            output.map((obj) => expect.objectContaining(obj))
+            output.map((object) => expect.objectContaining(object))
          )
       );
    });
