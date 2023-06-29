@@ -1,5 +1,17 @@
 
 
+## [2.0.0](https://github.com/danielc92/eslint-config-dc/compare/v1.17.3...v2.0.0) (2023-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* removed support for sonarjs & rxjs plugins
+
+### Features
+
+* removed support for sonarjs & rxjs plugins ([6a2074f](https://github.com/danielc92/eslint-config-dc/commit/6a2074fe7149691c2b7bfde657b4b929bdd4f0d7))
+* replaced sonarjs with unicorn plugin ([e0d5f0d](https://github.com/danielc92/eslint-config-dc/commit/e0d5f0ddc79df303fde71b3c466103863cb2f1f5))
+
 ## [1.17.3](https://github.com/danielc92/eslint-config-dc/compare/v1.17.2...v1.17.3) (2023-06-29)
 
 
