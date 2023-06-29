@@ -1,0 +1,111 @@
+name: Test, Build and Publish.
+on: [push]
+jobs:
+  test:
+    strategy:
+      matrix:
+        version: [18, 20]
+    permissions:
+      packages: read
+      id-token: write
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
+      - run: |
+          echo @92green:https://npm.pkg.github.com/ > ${GITHUB_WORKSPACE:-~}/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> ${GITHUB_WORKSPACE:-~}/.npmrc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: NPM Install
+        run: npm install
+        env:
+          NPM_CONFIG_USERCONFIG: $GITHUB_WORKSPACE/.npmrc
+          NODE_ENV: "development"
+      - name: test
+        run: npm run test
+        env:
+          NODE_ENV: "development"
+  publish_pre_release:
+    if: contains(github.ref, 'refs/heads/release')
+    strategy:
+      matrix:
+        version: [18]
+    permissions:
+      packages: write
+      id-token: write
+      contents: write
+    concurrency:
+      # pushes to same branch, to cancel out old actions
+      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.version }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
+      - run: |
+          echo @92green:https://npm.pkg.github.com/ > ${GITHUB_WORKSPACE:-~}/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> ${GITHUB_WORKSPACE:-~}/.npmrc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: git config
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - name: NPM Install
+        run: npm install
+        env:
+          NPM_CONFIG_USERCONFIG: $GITHUB_WORKSPACE/.npmrc
+          NODE_ENV: "development"
+      - name: PreRelease
+        run: npx release-it --preRelease --ci
+        env:
+          NODE_ENV: "development"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish_release:
+    if: contains(github.ref, 'refs/heads/main')
+    strategy:
+      matrix:
+        version: [18]
+    permissions:
+      packages: write
+      id-token: write
+      contents: write
+    concurrency:
+      # pushes to same branch, to cancel out old actions
+      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.version }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
+      - run: |
+          echo @92green:https://npm.pkg.github.com/ > ${GITHUB_WORKSPACE:-~}/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> ${GITHUB_WORKSPACE:-~}/.npmrc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: git config
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - name: NPM Install
+        run: npm install
+        env:
+          NPM_CONFIG_USERCONFIG: $GITHUB_WORKSPACE/.npmrc
+          NODE_ENV: "development"
+      - name: PreRelease
+        run: npx release-it --ci
+        env:
+          NODE_ENV: "development"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
