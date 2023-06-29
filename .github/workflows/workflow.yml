@@ -69,7 +69,7 @@ jobs:
           NPM_CONFIG_USERCONFIG: $GITHUB_WORKSPACE/.npmrc
           NODE_ENV: "development"
       - name: PreRelease
-        run: release-it --preRelease --ci
+        run: npx release-it --preRelease --ci
         env:
           NODE_ENV: "development"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
