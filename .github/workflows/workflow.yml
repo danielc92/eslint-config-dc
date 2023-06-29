@@ -9,10 +9,6 @@ jobs:
       packages: read
       id-token: write
       contents: write
-    concurrency:
-      # pushes to same branch, to cancel out old actions
-      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.version }}
-      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
