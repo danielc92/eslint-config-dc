@@ -9,6 +9,7 @@
   },
   "scripts": {
     "release": "release-it",
+    "prepare": "husky install",
     "test": "jest",
     "prepublishOnly": "npm run test"
   },
