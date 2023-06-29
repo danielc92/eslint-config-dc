@@ -1,1 +1,1 @@
-A place to test .eslintrc rules manually
+A place to experiment with .eslintrc rules manually

@@ -46,18 +46,3 @@ module.exports = { extends: [
     "eslint-config-platypus/react-addon"
     ] }
 ```
-
-#### Using the Rxjs add on
-If you wish to use the rxjs addon
-
-```
-npm i eslint-plugin-rxjs --save-dev
-```
-
-
-```js
-module.exports = { extends: [
-    "eslint-config-platypus",
-    "eslint-config-platypus/rxjs-addon"
-    ] }
-```

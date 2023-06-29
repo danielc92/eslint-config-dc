@@ -1,49 +1,41 @@
 import React, { Component } from 'react';
 
-
 class App extends Component {
-   state = {
-      counters: [
-         {
-            id: 1,
-            value: 0 
-         }, {
-            id: 2,
-            value: 0 
-         }, {
-            id: 3,
-            value: 0 
-         }, {
-            id: 4,
-            value: 0 
-         }
-      ]
-   };
+   state = { counters: [
+      {
+         id: 1,
+         value: 0 
+      },
+      {
+         id: 2,
+         value: 0 
+      },
+      {
+         id: 3,
+         value: 0 
+      },
+      {
+         id: 4,
+         value: 0 
+      }
+   ] };
 
    handleIncrement = (counter) => {
-      const counters = [ ... this.state.counters ];
+      const counters = [ ...this.state.counters ];
       const index = counters.indexOf(counter);
 
-      counters[index] = {
-         ... counters[index] 
-      };
+      counters[index] = { ...counters[index] };
       counters[index].value++;
-      this.setState({
-         counters 
-      });
+      this.setState({ counters });
    };
 
    handleDecrement = (counter) => {
-      const counters = [ ... this.state.counters ];
+      const counters = [ ...this.state.counters ];
       const index = counters.indexOf(counter);
 
-      counters[index] = {
-         ... counters[index] 
-      };
+      counters[index] = { ...counters[index] };
       counters[index].value--;
-      this.setState({
-         counters 
-      });
+      this.setState({ counters });
    };
 
    handleReset = () => {
@@ -53,17 +45,13 @@ class App extends Component {
          return c;
       });
 
-      this.setState({
-         counters 
-      });
+      this.setState({ counters });
    };
 
    handleDelete = (counterId) => {
       const counters = this.state.counters.filter((c) => c.id !== counterId);
 
-      this.setState({
-         counters 
-      });
+      this.setState({ counters });
    };
 
    handleRestart = () => {
@@ -89,18 +77,17 @@ class App extends Component {
                </div>
             </main>
          </div>
-      )
-      
-      
+      );
    }
 }
 
-const MyComponent = ({age, children, two,three, four,five}: any) => {
+const MyComponent = ({ age, children, two, three, four, five }: any) => {
    return (
       <div><h2>{age}</h2>
 
          {children}
       </div>
-)
-}
+   );
+};
+
 export default App;

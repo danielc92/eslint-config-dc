@@ -1,13 +1,19 @@
 import { hi } from './i';
 import { hid } from './i';
-import { Observable, from } from 'rxjs';
 
-const badObs = Observable.create('bad');
 
 console.log(badObs);
 
+enum Foo {
+   DONE = 'DONE',
+   PROCESSING = 'PROCESSING',
+   INCOMPLETE =
+}
+
+export { Foo };
+
 class Dasdas {
-   singlelineA: string;
+     singlelineA: string;
    singlelineS: string;
    singlelineD: string;
 

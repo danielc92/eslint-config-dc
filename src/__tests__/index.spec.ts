@@ -114,38 +114,7 @@ describe('.eslintrc.js suite', () => {
             } 
          ] 
       }, 
-      {
-         testName: 'rxjs-plugin',
-         input: [ './src/testing-files/rxjs-plugin' ],
-         output: [
-            {
-               ruleId: 'rxjs/no-create',
-               severity: 2 
-            } 
-         ] 
-      },
-      {
-         testName: 'sonarjs-plugin',
-         input: [ './src/testing-files/sonarjs-plugin' ],
-         output: [ 
-            {
-               ruleId: 'sonarjs/no-one-iteration-loop',
-               severity: 2 
-            },
-            {
-               ruleId: 'sonarjs/no-redundant-jump',
-               severity: 2 
-            },
-            {
-               ruleId: 'sonarjs/no-same-line-conditional',
-               severity: 2 
-            },
-            {
-               ruleId: 'sonarjs/no-inverted-boolean-check',
-               severity: 2 
-            } 
-         ] 
-      },
+
       {
          testName: 'typescript-plugin',
          input: [ './src/testing-files/typescript-plugin' ],
@@ -223,7 +192,6 @@ describe('.eslintrc.js suite', () => {
       const cli = new ESLint({ useEslintrc: true });
       const res = await cli.lintFiles(input);
    
-      // console.log(res[0].messages.map((x) => x.ruleId));
       expect(res[0].messages).toEqual(
          expect.arrayContaining(
             output.map((obj) => expect.objectContaining(obj))
