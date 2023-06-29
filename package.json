@@ -14,7 +14,7 @@
     "release": "release-it",
     "test": "jest",
     "prepublishOnly": "npm run test",
-    "prepare": "husky install"
+    "prepare": "husky install | chmod ug+x .husky/*"
   },
   "files": [
     "LICENSE",
