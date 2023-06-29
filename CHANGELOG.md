@@ -1,5 +1,12 @@
 
 
+## [1.18.0-1](https://github.com/danielc92/eslint-config-dc/compare/1.18.0-0...1.18.0-1) (2023-06-29)
+
+
+### Maintenance
+
+* allow old builds to run ([33c6a5e](https://github.com/danielc92/eslint-config-dc/commit/33c6a5e9a705187ebbd7163c5a20849b9ba90ee5))
+
 ## 1.18.0-0 (2023-06-29)
 
 
