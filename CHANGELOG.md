@@ -1,5 +1,12 @@
 
 
+## [2.1.0](https://github.com/danielc92/eslint-config-dc/compare/v2.0.0...v2.1.0) (2023-07-05)
+
+
+### Features
+
+* strict jest rule set ([cd4aecb](https://github.com/danielc92/eslint-config-dc/commit/cd4aecba61931d6291cab2cd39f414953d9b3d19))
+
 ## [2.0.0](https://github.com/danielc92/eslint-config-dc/compare/v1.17.3...v2.0.0) (2023-06-29)
 
 
