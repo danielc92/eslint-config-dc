@@ -23,31 +23,49 @@ module.exports = {
    'overrides': [
 
       // JEST/TESTING (ZERO TOLERANCE)
+      // Includes every rule from v27.2.2
       // These rules only apply to .spec.js, .spec.ts, .test.js, .test.ts files
       {
          'files': [ '**/*[spec|test].[t|j]s' ],
          'plugins': [ 'jest' ],
          'extends': [ 'plugin:jest/recommended' ],
          'rules': {
-              
-            'jest/prefer-expect-assertions': [
-               'error',
-               {
-                  'onlyFunctionsWithAsyncKeyword': true,
-                  'onlyFunctionsWithExpectInLoop': true,
-                  'onlyFunctionsWithExpectInCallback': true 
-               }
-            ],
-            'jest/prefer-each': 'error',
-            'jest/prefer-to-have-length': 'error',
-            'jest/max-expects': [ 'error', { max: 2 } ],
-            'jest/prefer-expect-resolves': 'error',
-            'jest/prefer-lowercase-title': 'error',
-            'jest/no-deprecated-functions': 'error',
-            'jest/prefer-hooks-in-order': 'error',
-            'jest/prefer-hooks-on-top': 'error',
-            'jest/prefer-equality-matcher': 'error',
-            'jest/no-conditional-in-test': 'error'
+            "jest/consistent-test-it": "error",
+            "jest/max-expects": "error",
+            "jest/max-nested-describe": "error",
+            "jest/no-conditional-in-test": "error",
+            "jest/no-duplicate-hooks": "error",
+            "jest/no-hooks": "error",
+            "jest/no-if": "error",
+            "jest/no-large-snapshots": "error",
+            "jest/no-restricted-jest-methods": "error",
+            "jest/no-restricted-matchers": "error",
+            "jest/no-test-return-statement": "error",
+            "jest/no-untyped-mock-factory": "error",
+            "jest/prefer-called-with": "error",
+            "jest/prefer-comparison-matcher": "error",
+            "jest/prefer-each": "error",
+            "jest/prefer-equality-matcher": "error",
+            "jest/prefer-expect-assertions": ["error", {
+               'onlyFunctionsWithAsyncKeyword': true,
+               'onlyFunctionsWithExpectInLoop': true,
+               'onlyFunctionsWithExpectInCallback': true 
+            }],
+            "jest/prefer-expect-resolves": "error",
+            "jest/prefer-hooks-in-order": "error",
+            "jest/prefer-hooks-on-top": "error",
+            "jest/prefer-lowercase-title": "error",
+            "jest/prefer-mock-promise-shorthand": "error",
+            "jest/prefer-snapshot-hint": "error",
+            "jest/prefer-spy-on": "error",
+            "jest/prefer-strict-equal": "error",
+            "jest/prefer-to-be": "error",
+            "jest/prefer-to-contain": "error",
+            "jest/prefer-to-have-length": "error",
+            "jest/prefer-todo": "error",
+            "jest/require-hook": "error",
+            "jest/require-to-throw-message": "error",
+            "jest/require-top-level-describe": "error"
          }
       }
    ],
