@@ -1,5 +1,18 @@
 
 
+## [2.2.0](https://github.com/danielc92/eslint-config-dc/compare/v2.1.0...v2.2.0) (2023-07-10)
+
+
+### Features
+
+* extend typescript rule set ([ad65c37](https://github.com/danielc92/eslint-config-dc/commit/ad65c378b0597db193e79ffc2b7ee122a03683d0))
+
+
+### Maintenance
+
+* add automated workflow ([853ed40](https://github.com/danielc92/eslint-config-dc/commit/853ed40bf667dc9ba9b762ea92cf434d07884e8c))
+* added vscode workspace recommendations ([26a19ca](https://github.com/danielc92/eslint-config-dc/commit/26a19ca679078753d470e3761682f9f522d2c1ce))
+
 ## [2.1.0](https://github.com/danielc92/eslint-config-dc/compare/v2.0.0...v2.1.0) (2023-07-05)
 
 
