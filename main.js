@@ -93,6 +93,11 @@ module.exports = {
       'no-secrets/no-secrets': 'error',
 
       // TYPESCRIPT RULES (https://typescript-eslint.io/rules/)
+      '@typescript-eslint/no-dynamic-delete': 'warn',
+      '@typescript-eslint/prefer-readonly': 'warn',
+      '@typescript-eslint/sort-type-constituents': 'warn',
+      '@typescript-eslint/prefer-return-this-type': 'warn',
+      '@typescript-eslint/no-meaningless-void-operator': 'warn',
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-mixed-enums': 'warn',
       '@typescript-eslint/no-unsafe-enum-comparison': 'warn',
