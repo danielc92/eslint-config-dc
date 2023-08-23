@@ -187,7 +187,7 @@ module.exports = {
          } 
       ],
       'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
-       // Prejent ASI
+       // Prevent ASI
       'semi': [ 'error', 'always' ],
       'no-multi-spaces': 'warn',
       'space-in-parens': [ 'warn', 'never' ],
