@@ -1,5 +1,7 @@
 
 
+## [1.18.0](https://github.com/danielc92/eslint-config-dc/compare/1.18.0-3...1.18.0) (2023-08-23)
+
 ## 1.18.0-3 (2023-06-29)
 
 
