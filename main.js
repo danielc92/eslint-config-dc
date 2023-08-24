@@ -135,7 +135,8 @@ module.exports = {
       'no-lonely-if': 'warn',
       'eqeqeq': 'warn',
       'no-new-wrappers': 'warn',
-      'no-plusplus': 'warn',
+       // Semis are required so we are not concerned with ASI
+      'no-plusplus': 'off',
       'no-return-await': 'warn',
       'no-throw-literal': 'warn',
       'no-nested-ternary': 'warn',
@@ -155,7 +156,7 @@ module.exports = {
       'multiline-ternary': [ 'warn', 'always' ],
       'indent': [
          'warn',
-         3,
+         4,
          {
             'SwitchCase': 1,
             'ignoredNodes': [
@@ -186,7 +187,8 @@ module.exports = {
          } 
       ],
       'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
-      'semi': [ 'warn', 'always' ],
+       // Prevent ASI
+      'semi': [ 'error', 'always' ],
       'no-multi-spaces': 'warn',
       'space-in-parens': [ 'warn', 'never' ],
       'semi-spacing': 'warn',
@@ -243,20 +245,12 @@ module.exports = {
       'comma-style': [ 'warn', 'last' ],
       'object-property-newline': [ 'warn', { 'allowAllPropertiesOnSameLine': false } ],
       'object-curly-newline': [
-         'warn',
-         {
-            'ObjectExpression': { 'minProperties': 2 },
-            'ObjectPattern': { 'multiline': true },
-            'ImportDeclaration': {
-               'multiline': true,
-               'minProperties': 4 
-            },
-            'ExportDeclaration': {
-               'multiline': true,
-               'minProperties': 4 
+            "warn", {
+                "ObjectExpression": { "multiline": true, "minProperties": 3, "consistent": true },
+                "ObjectPattern": { "multiline": true, "minProperties": 3, "consistent": true },
+                "ExportDeclaration": { "multiline": true, "minProperties": 3 }
             }
-         }
-      ],
+       ],
       'brace-style': [ 'warn', '1tbs', { allowSingleLine: false } ],
       'max-statements-per-line': [ 'warn', { 'max': 1 } ],
       'lines-between-class-members': [ 'warn', 'always', { 'exceptAfterSingleLine': true } ],
