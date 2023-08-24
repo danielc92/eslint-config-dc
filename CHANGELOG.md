@@ -1,5 +1,18 @@
 
 
+## [2.0.0](https://github.com/danielc92/eslint-config-dc/compare/1.18.0...2.0.0) (2023-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* set indenting to 4, disable ASI and tidy curly newlines
+
+### Features
+
+* fix my terrible typing ([90e6f2f](https://github.com/danielc92/eslint-config-dc/commit/90e6f2f6f7c39319947cf35dfe37683f8b628efd))
+* set indenting to 4, disable ASI and tidy curly newlines ([014c987](https://github.com/danielc92/eslint-config-dc/commit/014c9871986e4a16bc06b8d422f2236f60e8ddcd))
+* update workflow and test ([02f961d](https://github.com/danielc92/eslint-config-dc/commit/02f961d06c31c0b0de10c3cc52d0efdff82bb858))
+
 ## [1.18.0](https://github.com/danielc92/eslint-config-dc/compare/1.18.0-3...1.18.0) (2023-08-23)
 
 ## 1.18.0-3 (2023-06-29)
