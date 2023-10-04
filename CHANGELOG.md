@@ -1,5 +1,13 @@
 
 
+## [2.1.0](https://github.com/danielc92/eslint-config-dc/compare/2.0.0...2.1.0) (2023-10-04)
+
+
+### Features
+
+* added github tokens pattern ([f9dd1bd](https://github.com/danielc92/eslint-config-dc/commit/f9dd1bd78891915f3ad56ff2156dc9bc17cc279b))
+* eliminate some false positives in no-secrets ([70f33ce](https://github.com/danielc92/eslint-config-dc/commit/70f33ce56843b17fbcc4b5f29810a1fe22a2e5ce))
+
 ## [2.0.0](https://github.com/danielc92/eslint-config-dc/compare/1.18.0...2.0.0) (2023-08-24)
 
 
