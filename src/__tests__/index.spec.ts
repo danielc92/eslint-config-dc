@@ -4,7 +4,7 @@ describe('.eslintrc.js suite', () => {
     it.each<{
       testName: string,
       input: Array<string>,
-      output: Array<{ruleId: string, severity: 0 | 1 | 2}>
+      output: Array<{ruleId: string, severity: 0 | 1 | 2, message?: string}>
    }>([
        {
            testName: 'eslint-core',
@@ -171,7 +171,13 @@ describe('.eslintrc.js suite', () => {
                {
                    ruleId: 'no-secrets/no-secrets',
                    severity: 2 
-               } 
+               },
+               {
+                   ruleId: 'no-secrets/no-secrets',
+                   severity: 2,
+                   message: 'Found a string that matches \"Github tokens\" : \"ghp_l7UAFAKYE1x5ydDUpwNUekMCXfmIAi2LCJNo\"'
+                
+               }
            ]
        },
        {
@@ -226,6 +232,7 @@ describe('.eslintrc.js suite', () => {
        const res = await cli.lintFiles(input);
    
        // console.log(res[0].messages.map((x) => x.ruleId));
+       console.log(JSON.stringify(res, null, 2));
        expect(res[0].messages).toEqual(
            expect.arrayContaining(
                output.map((obj) => expect.objectContaining(obj))

@@ -74,9 +74,15 @@ module.exports = {
 
       // SECURITY: SECRETS (ZERO TOLERANCE)
       'no-secrets/no-secrets': ["error",{
-            // ignore entropy of <4
+            // note: default is 4
             "tolerance":4, 
-            // ignore uuid patterns
+            "additionalRegexes": { 
+               // source https://gist.github.com/magnetikonline/073afe7909ffdd6f10ef06a00bc3bc88#combined-together
+               "Github tokens": "^(gh[ps]_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59})$",
+               "Basic Auth": "Authorization: Basic [A-Za-z0-9+/=]*",
+
+            },
+            // ignore uuid pattern
             "ignoreContent": "^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$"
             }],
         
