@@ -231,8 +231,6 @@ describe('.eslintrc.js suite', () => {
        const cli = new ESLint({ useEslintrc: true });
        const res = await cli.lintFiles(input);
    
-       // console.log(res[0].messages.map((x) => x.ruleId));
-       console.log(JSON.stringify(res, null, 2));
        expect(res[0].messages).toEqual(
            expect.arrayContaining(
                output.map((obj) => expect.objectContaining(obj))
