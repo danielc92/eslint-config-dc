@@ -73,7 +73,12 @@ module.exports = {
       'import/exports-last': 'warn',
 
       // SECURITY: SECRETS (ZERO TOLERANCE)
-      'no-secrets/no-secrets': 'error',
+      'no-secrets/no-secrets': ["error",{
+            // ignore entropy of <4
+            "tolerance":4, 
+            // ignore uuid patterns
+            "ignoreContent": "^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$"
+            }],
         
       // CODE QUALITY: SONARJS (ZERO TOLERANCE)
       'sonarjs/cognitive-complexity': 'error',
